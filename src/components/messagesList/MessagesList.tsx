@@ -1,14 +1,19 @@
 import React from "react";
 import {Data} from "react-firebase-hooks/firestore/dist/firestore/types";
-import firebase from "firebase";
 import {DocumentData} from "@firebase/firestore-types";
 
+
+/**
+ * Presentation component of message list
+ * @component
+ *@param{object} props data from container component
+ */
 
 export const MessagesList = (props: messageListPropsType) => {
     return (
         <div>
             {props.messages?.map(m => {
-                return <div>
+                return <div key={m.nameUser}>
                     <div>{m.nameUser}</div>
                     <div>{m.text}</div>
                 </div>
@@ -18,6 +23,7 @@ export const MessagesList = (props: messageListPropsType) => {
     )
 }
 
+//type
 type messageListPropsType = {
-    messages: Data<DocumentData, "", "">[] | undefined
+    messages: Data<DocumentData>[] | undefined
 }

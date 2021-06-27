@@ -1,12 +1,18 @@
 import React, {useContext, useState} from "react";
-import {Message} from "./Message";
+import {MessageForm} from "./MessageForm";
 import {Context} from "../../index";
 import {useCollectionData} from "react-firebase-hooks/firestore";
 import {Loader} from "../loader/Loader";
 import firebase from "firebase";
 
 
-export const MessageContainer = () => {
+/**
+ * Container component for the message submit form
+ *
+ * @component
+ */
+
+export const MessageFormContainer = () => {
     const {firestore} = useContext(Context)
     const [messages, loading] = useCollectionData(
         firestore.collection('messages').orderBy('createdAT')
@@ -14,9 +20,22 @@ export const MessageContainer = () => {
     const [value, setValue] = useState<string>('')
     const [nameUser, setNameUser] = useState<string>('')
 
+    /**
+     * Function to change values in forms
+     * @function
+     *@param {function}  setFunction function that changes the local state
+     * @return {function} returns a function to change the message text and name in forms
+     */
+
     const onChangeTextarea = (setFunction: Function) => (e: React.FormEvent<HTMLTextAreaElement>) => {
         return setFunction(e.currentTarget.value)
     }
+
+
+    /**
+     * Sending a message and clearing input fields
+     * @function
+     */
 
     const sendMessage = async () => {
         await firestore.collection('messages').add({
@@ -34,7 +53,7 @@ export const MessageContainer = () => {
 
     return (
         <div>
-            <Message
+            <MessageForm
                 value={value}
                 nameUser={nameUser}
                 onChangeTextarea={onChangeTextarea}

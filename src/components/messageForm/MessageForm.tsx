@@ -1,7 +1,12 @@
 import React from "react";
 
+/**
+ * Presentation component of the form for sending messages
+ * @component
+ *@param{object} props data from container component
+ */
 
-export const Message = (props: MessagePropsType) => {
+export const MessageForm = (props: MessagePropsType) => {
     return (
         <div>
             <textarea value={props.nameUser} onChange={props.onChangeTextarea(props.setNameUser)}/>

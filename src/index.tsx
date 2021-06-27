@@ -7,7 +7,6 @@ import firebase from "firebase";
 import {firestore} from "./api/api";
 
 
-
 export const Context = createContext<contextType>({firebase, firestore})
 
 ReactDOM.render(
