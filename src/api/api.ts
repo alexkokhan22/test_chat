@@ -1,7 +1,7 @@
 import firebase from "firebase";
 import "firebase/firestore"
 
-const firebaseConfig = {
+export const firebaseConfig = {
     apiKey: "AIzaSyD6Pp62mm55fC_CQ9UHq5UF82AfqnrULoA",
     authDomain: "test-chat-84785.firebaseapp.com",
     projectId: "test-chat-84785",
@@ -13,3 +13,4 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
+export const firestore = firebase.firestore()
