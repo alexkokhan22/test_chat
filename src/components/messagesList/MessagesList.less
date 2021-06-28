@@ -1,0 +1,27 @@
+.ListContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  height: 380px;
+  width: 95%;
+  margin: 20px;
+
+  border: 2px solid black;
+  background-color: lightgrey;
+  overflow: auto;
+
+  .MessagesContainer {
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    max-width: 50%;
+    background-color: cornflowerblue;
+
+    .MessageElement {
+      font-family: Arial sans-serif;
+      color: aliceblue;
+      overflow-x: hidden;
+    }
+  }
+}

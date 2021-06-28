@@ -1,6 +1,7 @@
 import React from "react";
 import {Data} from "react-firebase-hooks/firestore/dist/firestore/types";
 import {DocumentData} from "@firebase/firestore-types";
+import "./MessagesList.less"
 
 
 /**
@@ -11,11 +12,12 @@ import {DocumentData} from "@firebase/firestore-types";
 
 export const MessagesList = (props: messageListPropsType) => {
     return (
-        <div>
+        <div className="ListContainer">
             {props.messages?.map(m => {
-                return <div key={m.nameUser}>
-                    <div>{m.nameUser}</div>
-                    <div>{m.text}</div>
+                return <div className="MessagesContainer" key={m.nameUser}>
+                    <div>{m.createdAT.value}</div>
+                    <div className="MessageElement">{m.nameUser}</div>
+                    <div className="MessageElement">{m.text}</div>
                 </div>
 
             })}

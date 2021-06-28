@@ -1,4 +1,5 @@
 import React from "react";
+import "./MessageForm.less"
 
 /**
  * Presentation component of the form for sending messages
@@ -8,10 +9,25 @@ import React from "react";
 
 export const MessageForm = (props: MessagePropsType) => {
     return (
-        <div>
-            <textarea value={props.nameUser} onChange={props.onChangeTextarea(props.setNameUser)}/>
-            <textarea value={props.value} onChange={props.onChangeTextarea(props.setValue)}/>
-            <button onClick={props.sendMessage}>send message</button>
+        <div className="Form">
+            <input
+                className="FieldForm"
+                value={props.nameUser}
+                onChange={props.onChangeTextarea(props.setNameUser)}
+                placeholder={'your name'}
+            />
+            <textarea
+                className="FieldForm"
+                value={props.value}
+                onChange={props.onChangeTextarea(props.setValue)}
+                placeholder={'your message'}/>
+
+            <button
+                className="ButtonForm"
+                onClick={props.sendMessage}
+            >
+                send message
+            </button>
         </div>
     )
 }
@@ -21,7 +37,7 @@ export const MessageForm = (props: MessagePropsType) => {
 type MessagePropsType = {
     value: string
     nameUser: string
-    onChangeTextarea: (setFunction: Function) => (e: React.FormEvent<HTMLTextAreaElement>) => void
+    onChangeTextarea: (setFunction: Function) => (e: React.FormEvent<HTMLTextAreaElement | HTMLInputElement>) => void
     sendMessage: () => void
     setNameUser: Function
     setValue: Function

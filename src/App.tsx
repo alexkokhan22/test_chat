@@ -1,7 +1,8 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.less";
 import {MessagesListContainer} from "./components/messagesList/MessagesListContainer";
 import {MessageFormContainer} from "./components/messageForm/MessageFormContainer";
+
 
 /**
  * Component for rendering the entire application
@@ -12,9 +13,11 @@ import {MessageFormContainer} from "./components/messageForm/MessageFormContaine
 
 function App() {
     return (
-        <div className="App">
-            <MessagesListContainer/>
-            <MessageFormContainer/>
+        <div className="AppContainer">
+            <div className="BorderContainer">
+                <MessagesListContainer/>
+                <MessageFormContainer/>
+            </div>
         </div>
     );
 }
