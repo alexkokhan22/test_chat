@@ -15,7 +15,6 @@ export const MessagesList = (props: messageListPropsType) => {
         <div className="ListContainer">
             {props.messages?.map(m => {
                 return <div className="MessagesContainer" key={m.nameUser}>
-                    <div>{m.createdAT.value}</div>
                     <div className="MessageElement">{m.nameUser}</div>
                     <div className="MessageElement">{m.text}</div>
                 </div>

@@ -1,7 +1,6 @@
 import React, {useContext, useState} from "react";
 import {MessageForm} from "./MessageForm";
 import {Context} from "../../index";
-import {useCollectionData} from "react-firebase-hooks/firestore";
 import firebase from "firebase";
 
 
@@ -13,9 +12,6 @@ import firebase from "firebase";
 
 export const MessageFormContainer = () => {
     const {firestore} = useContext(Context)
-    const [messages,loading] = useCollectionData(
-        firestore.collection('messages').orderBy('createdAT')
-    )
     const [value, setValue] = useState<string>('')
     const [nameUser, setNameUser] = useState<string>('')
 
@@ -45,10 +41,6 @@ export const MessageFormContainer = () => {
         })
         setValue('')
         setNameUser('')
-    }
-
-    if (loading) {
-
     }
 
     return (
