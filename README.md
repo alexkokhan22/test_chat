@@ -21,6 +21,6 @@
 
 <br />
 
-Готовое приложение здесь: [https://fir-hosting-9d76d.web.app/](https://fir-hosting-9d76d.web.app/)
+Готовое приложение здесь: [https://chat-32e40.web.app/](https://chat-32e40.web.app/)
 
 
